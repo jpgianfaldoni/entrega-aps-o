@@ -22,7 +22,7 @@ public class GateView extends FixedPanel implements ActionListener, MouseListene
 
 
     public GateView(Gate gate) {
-        super(245, 346);
+        super();
         this.gate = gate;
         JCheckBox saidaField;
 
@@ -43,11 +43,11 @@ public class GateView extends FixedPanel implements ActionListener, MouseListene
 
 
         nome = gate.toString();
-        if (nome != "NOT") {
-            add(entradaField, 20, 150, 25, 25);
-            add(entradaField2, 20, 180, 25, 25);
+        if (!nome.equals("NOT")) {
+            add(entradaField, 20, 150);
+            add(entradaField2, 20, 180);
         } else {
-            add(entradaField, 10, 175, 25, 25);
+            add(entradaField, 10, 175);
         }
         //add(saidaField, 200, 160, 25, 25);
 
@@ -91,7 +91,7 @@ public class GateView extends FixedPanel implements ActionListener, MouseListene
             if (selected) {
                 switch1.turnOn();
                 gate.connect(0, switch1);
-            } else if (!selected) {
+            } else {
                 switch1.turnOff();
                 gate.connect(0, switch1);
             }
@@ -100,7 +100,7 @@ public class GateView extends FixedPanel implements ActionListener, MouseListene
             if (selected) {
                 switch2.turnOn();
                 gate.connect(1, switch2);
-            } else if (!selected) {
+            } else {
                 switch2.turnOff();
                 gate.connect(1, switch2);
             }

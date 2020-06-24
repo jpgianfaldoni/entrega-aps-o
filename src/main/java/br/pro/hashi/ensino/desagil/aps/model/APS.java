@@ -12,6 +12,7 @@ public class APS {
         model.add(new NandGate());
         model.add(new OrGate());
         model.add(new XorGate());
+        model.add(new XnorGate());
         View view = new View(model);
         javax.swing.SwingUtilities.invokeLater(() -> {
             JFrame frame = new JFrame();
